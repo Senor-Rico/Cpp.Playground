@@ -31,6 +31,18 @@ CarCounter::CarCounter() {
 
 /* Your solution goes here  */
 
+CarCounter& CarCounter::operator=(const CarCounter& objToCopy) {
+   
+   if (this != &objToCopy) {           
+      delete carCount;                 
+      carCount = new int;              
+      *carCount = *(objToCopy.carCount); 
+   }
+   
+   return *this;
+}
+
+
 int main() {
    CarCounter frontParkingLot;
    CarCounter backParkingLot;
